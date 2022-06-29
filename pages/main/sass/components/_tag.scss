@@ -1,0 +1,48 @@
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    cursor: pointer;
+    &:hover{
+        border-color: $color-primary-light;
+        background-color: $color-primary-light;
+    }
+}
+
+.tag-slider-left {
+    margin-right: 53px;
+    @include media-tablet{
+        margin-right: 12px;
+    }
+    @include media-mobile {
+        order: 2;
+    }
+}
+
+.tag-slider-right{
+    margin-left: 53px;
+    @include media-tablet{
+        margin-left: 12px;
+    }
+    @include media-mobile{
+        order: 2;
+    }
+}
+
+.tag-disabled{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    color: $color-dark-s;
+    border: 2px solid $color-dark-s;
+    border-radius: 100px;
+    cursor: pointer;
+}

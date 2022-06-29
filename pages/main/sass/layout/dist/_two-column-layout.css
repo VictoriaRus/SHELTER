@@ -1,0 +1,6 @@
+.two-column-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 50%;
+}

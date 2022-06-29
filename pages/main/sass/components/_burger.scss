@@ -1,0 +1,11 @@
+.burger {
+    display: none;
+    @extend %transition;
+    @include media-mobile { 
+        display: block;
+        z-index: 100;
+    }
+}
+.burger-active{
+    transform: rotate(90deg); 
+}

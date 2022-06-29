@@ -1,0 +1,42 @@
+.start-screen__info {
+    width: 38%;
+    margin-right: 42px;
+    @include media-tablet {
+        width: 460px;
+        margin: auto;
+    }
+}
+
+.content {
+    margin-bottom: 42px;
+    p {
+        font-family: Arial, sans-serif;
+        @include font(1.5rem, 2.4rem);
+        color: $color-dark-s;
+    }
+    @include media-mobile {
+        text-align: center;
+    }
+}
+
+.start-screen__btn {
+    @include media-tablet {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+}
+
+.start-screen__img {
+    width: 62%;
+    img {
+        display: block;
+        width: 100%;
+    }
+    @include media-tablet {
+        width: 81%;
+        margin-left: auto;
+    }
+    @include media-mobile {
+        width: 320px;
+    }
+}

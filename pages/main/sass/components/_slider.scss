@@ -1,0 +1,32 @@
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    @include media-mobile{
+       flex-wrap: wrap;
+    }
+}
+.slider-window {
+    width: 990px; //270
+    overflow: hidden;
+    @include media-tablet {
+        width: 580px;
+    }
+    @include media-mobile {
+        width: 100%;
+        margin-bottom: 20px;
+        order: 1;
+    }
+}
+.slider-line {
+    position: relative;
+    display: inline-flex;
+    gap: 90px; //растояние между карточками
+    //width: 2070px; //1350
+    left: 0;
+    transition: all ease 1s;
+    @include media-tablet {
+        gap: 40px; //растояние между карточками
+    }
+}

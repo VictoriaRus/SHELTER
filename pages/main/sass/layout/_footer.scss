@@ -1,0 +1,55 @@
+.footer {
+    padding-top: 40px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.376)),
+        url(../../../assets/images/start-screen-gradient-background.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    width: 305px;
+    margin-bottom: 60px;
+    &:last-child {
+        margin: 0;
+    }
+}
+
+.footer__title {
+    @include font(3.5rem, 4.5rem);
+    letter-spacing: 0.06em;
+    color: $color-light-l;
+    margin-bottom: 34px;
+    @include media-mobile {
+        text-align: center;
+        @include font(2.5rem, 3.5rem);
+    }
+}
+
+.footer__contacts,
+.footer__locations {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.footer__icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    &:last-child {
+        margin: 0;
+    }
+    img {
+        margin-right: 20px;
+    }
+    span {
+        @include font(2rem, 3.2rem);
+        letter-spacing: 0.06em;
+        color: $color-primary;
+    }
+}

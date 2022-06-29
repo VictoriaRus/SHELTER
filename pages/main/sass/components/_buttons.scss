@@ -1,0 +1,21 @@
+.btn {
+    max-width:261px;
+    height: 52px;
+    background-color: $color-white;
+    border: 2px solid $color-primary;
+    border-radius: 100px;
+    padding: 15px 45px;
+    cursor: pointer;
+    @extend %transition;
+    font-family: "Georgia", sans-serif;
+    @include font(1.7rem, 2.2rem);
+    color: $color-text;
+    &:hover {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+    }
+}
+
+.btn-fill {
+    background-color: $color-primary;
+}

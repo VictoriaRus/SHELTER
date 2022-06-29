@@ -1,0 +1,21 @@
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo__title {
+    @include font(3.2rem, 3.5rem);
+    letter-spacing: 0.06em;
+    color: $color-primary-light;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.logo__subtitle {
+    font-family: Arial, sans-serif;
+    @include font(1.3rem, 1.5rem);
+    letter-spacing: 0.1em;
+    color: $color-white;
+}

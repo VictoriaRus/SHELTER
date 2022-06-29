@@ -1,0 +1,32 @@
+@import url(../../assets/fonts/georgia.ttf);
+
+//abstracts
+@import "abstracts/variables";
+@import "abstracts/placeholders";
+@import "abstracts/mixins";
+
+//base
+@import "base/base";
+
+//components
+@import "components/burger";
+@import "components/buttons";
+@import "components/logo";
+@import "components/slider";
+@import "components/tag";
+@import "components/card";
+@import "components/modal-window";
+@import "components/list";
+@import "components/item-icon";
+@import "components/credit-card";
+
+//layout
+@import "layout/column";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/start-screen";
+@import "layout/about";
+@import "layout/pets";
+@import "layout/help";
+@import "layout/donation";
+@import "layout/footer";

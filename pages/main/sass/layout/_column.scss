@@ -1,0 +1,21 @@
+.layout-2-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 50%;
+    @include media-tablet{
+        flex-wrap: wrap;
+    }
+}
+
+.layout-3-column {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    flex-basis: 33%;
+    @include media-tablet{
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-basis: 50%;
+    }
+}
