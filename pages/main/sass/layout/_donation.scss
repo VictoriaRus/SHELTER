@@ -16,13 +16,13 @@
     img {
         width: 100%;
     }
-    @include media-tablet{
+    @include media-tablet {
         order: 2;
     }
 }
 .donation__content {
     max-width: 380px;
-    @include media-tablet{
+    @include media-tablet {
         margin-bottom: 60px;
         order: 1;
     }
@@ -40,7 +40,6 @@
         text-align: center;
     }
 }
-
 
 .donation__text {
     font-family: "Arial";

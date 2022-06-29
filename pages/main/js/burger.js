@@ -9,11 +9,11 @@ parent.addEventListener('click', onBurger);
 function onBurger(e) {
     let link = e.target.nodeName;
     if (link === 'IMG') {
-        if(!burger.classList.contains("burger-active")){
+        if (!burger.classList.contains("burger-active")) {
             burger.classList.add("burger-active");
             navigation.classList.add("navigation-burger");
             document.body.style.overflow = 'hidden';
-        } else{
+        } else {
             burger.classList.remove("burger-active");
             navigation.classList.remove("navigation-burger");
             document.body.style.overflow = '';

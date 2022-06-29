@@ -3,12 +3,12 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 60px;
-    @include media-mobile{
-       flex-wrap: wrap;
+    @include media-mobile {
+        flex-wrap: wrap;
     }
 }
 .slider-window {
-    width: 990px; //270
+    width: 990px;
     overflow: hidden;
     @include media-tablet {
         width: 580px;
@@ -22,11 +22,10 @@
 .slider-line {
     position: relative;
     display: inline-flex;
-    gap: 90px; //растояние между карточками
-    //width: 2070px; //1350
+    gap: 90px;
     left: 0;
     transition: all ease 1s;
     @include media-tablet {
-        gap: 40px; //растояние между карточками
+        gap: 40px;
     }
 }

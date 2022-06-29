@@ -13,6 +13,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -147,9 +148,12 @@ body {
   line-height: 3.5rem;
   font-style: normal;
   letter-spacing: 0.06em;
-  color: #FDDCC4;
+  color: #F1CDB3;
   cursor: pointer;
   margin-bottom: 10px;
+}
+.logo__title:hover {
+  color: #FDDCC4;
 }
 
 .logo__subtitle {

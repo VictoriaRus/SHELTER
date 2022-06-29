@@ -8,9 +8,12 @@
 .logo__title {
     @include font(3.2rem, 3.5rem);
     letter-spacing: 0.06em;
-    color: $color-primary-light;
+    color: $color-primary;
     cursor: pointer;
     margin-bottom: 10px;
+    &:hover {
+        color: $color-primary-light;
+    }
 }
 
 .logo__subtitle {

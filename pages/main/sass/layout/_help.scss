@@ -1,27 +1,27 @@
-.help{
+.help {
     padding: 80px 0 100px 0;
     @include media-mobile {
         padding: 42px 0;
     }
 }
-.help__title{
+.help__title {
     display: flex;
     justify-content: center;
     text-align: center;
 }
-.list-icons{ 
+.list-icons {
     margin-top: 60px;
 }
 
-.list-icons__row{
+.list-icons__row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 55px;
-    &:last-child{
+    &:last-child {
         margin: 0;
     }
-    @include media-tablet{
+    @include media-tablet {
         justify-content: space-between;
         gap: 60px;
     }
