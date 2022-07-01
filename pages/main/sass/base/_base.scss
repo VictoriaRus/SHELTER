@@ -48,7 +48,7 @@ body {
         max-width: 310px;
     }
     @include media-mobile {
-        width: 100%;
+        max-width: 100%;
         text-align: center;
         @include font(2.5rem, 3.2rem);
     }

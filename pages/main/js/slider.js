@@ -1,15 +1,14 @@
 "use strict"
 
-let offset = 0; //смещение от левого края
+let x1 = null;
+let y1 = null;
+let offset = 0;
 
 let sliderLine = document.querySelector('.slider-line');
-let sliderWidth = sliderLine.offsetWidth; //2070 ширина линии - все карточки с растояниями между ними 
-
-let cardWidth = document.querySelector('.card').offsetWidth; //270 ширина карточки
-let cardWithMargin = document.querySelectorAll('.card')[1].offsetLeft; //90 ширина карточки
-
-let sliderWindow = document.querySelector('.slider-window').offsetWidth; //ширина окна видемой прокрутки
-
+let sliderWidth = sliderLine.offsetWidth;
+let cardWidth = document.querySelector('.card').offsetWidth;
+let cardWithMargin = document.querySelectorAll('.card')[1].offsetLeft;
+let sliderWindow = document.querySelector('.slider-window').offsetWidth;
 let buttonNext = document.getElementById('button-next');
 let buttonPrev = document.getElementById('button-prev');
 
@@ -18,31 +17,28 @@ buttonPrev.addEventListener('click', sliderRight);
 
 buttonDisabled(buttonPrev);
 
+sliderLine.addEventListener('touchstart', handleTouchStart, false);
+sliderLine.addEventListener('touchmove', handleTouchMove, false);
+
 function sliderLeft() {
-    offset += cardWithMargin; // offset+=270;
+    offset += cardWithMargin;
     buttonActive(buttonPrev);
-    if (offset > (sliderWidth - sliderWindow - cardWidth)) { //1080//990
-        //offset = 0;
+
+    if (offset > (sliderWidth - sliderWindow - cardWidth)) {
         buttonDisabled(buttonNext);
-        sliderLine.removeEventListener('touchstart', handleTouchStart, false);
-        sliderLine.removeEventListener('touchmove', handleTouchMove, false);
-        
     }
+
     sliderLine.style.left = -offset + 'px';
 }
 
 function sliderRight() {
     buttonActive(buttonNext);
-    offset -= cardWithMargin; // offset-=270;
-    /*if(offset < 0){
-        offset = 720;//1080
-    }*/
+    offset -= cardWithMargin;
+
     if (offset < cardWithMargin) {
-        //offset = 720;//1080
         buttonDisabled(buttonPrev);
-        sliderLine.removeEventListener('touchstart', handleTouchStart, false);
-        sliderLine.removeEventListener('touchmove', handleTouchMove, false);
     }
+
     sliderLine.style.left = -offset + 'px';
 }
 
@@ -58,12 +54,6 @@ function buttonDisabled(button) {
     button.disabled = true;
 }
 
-sliderLine.addEventListener('touchstart', handleTouchStart, false);
-sliderLine.addEventListener('touchmove', handleTouchMove, false);
-
-let x1 = null;
-let y1 = null;
-
 function handleTouchStart(event) {
     const firstTouch = event.touches[0];
     x1 = firstTouch.clientX;
@@ -71,31 +61,38 @@ function handleTouchStart(event) {
 }
 
 function handleTouchMove(event) {
+
     if (!x1 || !y1) {
         return false;
     }
+
     let x2 = event.touches[0].clientX;
     let y2 = event.touches[0].clientY;
     let xDiff = x2 - x1;
     let yDiff = y2 - y1;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        // r-l
+
         if (xDiff > 0) {
-            console.log("right");
+
+            if (offset < cardWithMargin) {
+                sliderLeft();
+            }
+
             sliderRight();
+
         } else {
-            console.log("left");
+
+            if (offset > (sliderWidth - sliderWindow - cardWidth)) {
+                sliderRight();
+            }
+
             sliderLeft();
+
         }
-    } else {
-        //t-b
-        if (yDiff > 0) {
-            console.log("down");
-        } else {
-            console.log("top");
-        }
+
     }
+    
     x1 = null;
     y1 = null;
 }

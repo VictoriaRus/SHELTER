@@ -1,26 +1,37 @@
 .navigation-list {
     display: flex;
+    position: relative;
     @include media-mobile {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         right: 0;
         top: 0;
         width: 100%;
         height: 100vh;
         text-align: center;
+        transform: translateY(-100vh);
+        opacity: 0;
+        visibility: hidden;
     }
 }
 @include media-mobile {
     .navigation-close {
-        display: none;
+        transition: 0.3s;
+        transform: translateY(-100vh);
     }
-
     .navigation-burger {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: #292929;
+        transition: 0.3s;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 }
 .navigation-list__item {

@@ -1,6 +1,7 @@
 "use strict"
 
-const PETS__DB = [{
+const PETS__DB = [
+  {
     id: 0,
     name: 'Katrine',
     breed: 'Cat - British Shorthair',
@@ -90,15 +91,17 @@ const PETS__DB = [{
   },
 ];
 
-let btn = document.getElementById("sliderLine");
+let btn = document.getElementById("slider-line");
 
 btn.addEventListener('click', onModel);
+window.addEventListener('click', onDeleteModel);
 
 function onModel(event) {
+
   if (event.target.nodeName == "BUTTON") {
     const petId = event.target.id;
-
     let base = document.getElementById("baseModel");
+    
     base.insertAdjacentHTML("beforeEnd",
       `<div class="model" id="myModal">
         <div class="modal-window">
@@ -129,14 +132,14 @@ function onModel(event) {
     span.onclick = function () {
       modal.remove();
     }
+
   }
 
 }
 
-window.addEventListener('click', onDeleteModel);
-
 function onDeleteModel(event) {
   let modal = document.getElementById("myModal");
+
   if (event.target == modal) {
     modal.remove();
   }
