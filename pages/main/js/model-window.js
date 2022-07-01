@@ -107,7 +107,7 @@ function onModel(event) {
       `<div class="model" id="myModal">
         <div class="modal-window">
           <div class="layout-2-column modal-window__wrap">
-              <span class="close tag"><span>x</span></span>
+              <span class="close tag"><span>✕</span></span>
               <div class="modal-window__img"><img src="${PETS__DB[petId].photo}"
                       alt="pets-jennifer"></div>
               <div class="modal-content">
