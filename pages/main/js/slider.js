@@ -4,21 +4,21 @@ let x1 = null;
 let y1 = null;
 let offset = 0;
 
-let sliderLine = document.querySelector('.slider-line');
+let sliderLine = document.querySelector(".slider-line");
 let sliderWidth = sliderLine.offsetWidth;
-let cardWidth = document.querySelector('.card').offsetWidth;
-let cardWithMargin = document.querySelectorAll('.card')[1].offsetLeft;
-let sliderWindow = document.querySelector('.slider-window').offsetWidth;
-let buttonNext = document.getElementById('button-next');
-let buttonPrev = document.getElementById('button-prev');
+let cardWidth = document.querySelector(".card").offsetWidth;
+let cardWithMargin = document.querySelectorAll(".card")[1].offsetLeft;
+let sliderWindow = document.querySelector(".slider-window").offsetWidth;
+let buttonNext = document.getElementById("button-next");
+let buttonPrev = document.getElementById("button-prev");
 
-buttonNext.addEventListener('click', sliderLeft);
-buttonPrev.addEventListener('click', sliderRight);
+buttonNext.addEventListener("click", sliderLeft);
+buttonPrev.addEventListener("click", sliderRight);
 
 buttonDisabled(buttonPrev);
 
-sliderLine.addEventListener('touchstart', handleTouchStart, false);
-sliderLine.addEventListener('touchmove', handleTouchMove, false);
+sliderLine.addEventListener("touchstart", handleTouchStart, false);
+sliderLine.addEventListener("touchmove", handleTouchMove, false);
 
 function sliderLeft() {
     offset += cardWithMargin;
@@ -28,7 +28,7 @@ function sliderLeft() {
         buttonDisabled(buttonNext);
     }
 
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.left = -offset + "px";
 }
 
 function sliderRight() {
@@ -39,18 +39,18 @@ function sliderRight() {
         buttonDisabled(buttonPrev);
     }
 
-    sliderLine.style.left = -offset + 'px';
+    sliderLine.style.left = -offset + "px";
 }
 
 function buttonActive(button) {
-    button.classList.remove('tag-disabled');
-    button.classList.add('tag');
+    button.classList.remove("tag-disabled");
+    button.classList.add("tag");
     button.disabled = false;
 }
 
 function buttonDisabled(button) {
-    button.classList.remove('tag');
-    button.classList.add('tag-disabled');
+    button.classList.remove("tag");
+    button.classList.add("tag-disabled");
     button.disabled = true;
 }
 
